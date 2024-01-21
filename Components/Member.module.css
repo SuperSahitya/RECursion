@@ -1,0 +1,57 @@
+#parent{
+  height: 25vh;
+  width: 25vw;
+  min-width: 380px;
+  min-height: 140px;
+  background-color: var(--light-black);
+  color: white;
+  margin: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 2vw; */
+}
+#image{
+  width: 8vw;
+  aspect-ratio: 1/1;
+  min-width: 120px;
+  /* margin-left: 1vw; */
+  /* background-color: antiquewhite; */
+  /* background-image: url("/Dikshita_Majumdar.png"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  /* transform: scale(1); */
+  transition: all 1s ease-out;
+}
+/* #image:hover{
+  border-radius: 25%;
+} */
+#data{
+  height: 22vh;
+  /* width: 24vw; */
+  /* background-color: blueviolet; */
+  padding-left: 20px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  gap: 1vh;
+}
+#name{
+  font-size: 1.25rem;
+
+}
+#links{
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.6vw;
+  align-items: center;
+  flex-direction: row;
+}
+
+.icons{
+  font-size: 2.5rem;
+}
