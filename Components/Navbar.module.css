@@ -129,7 +129,7 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    backdrop-filter: blur(100px);
+    backdrop-filter: blur(5px);
     /* background-color: red; */
     z-index: 2;
   }
