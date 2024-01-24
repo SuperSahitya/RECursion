@@ -24,20 +24,13 @@ const Navbar = () => {
         <div id={style.hamburger}>
           <GiHamburgerMenu id={style.hamburgericon} onClick={handleClick} />
           {panel ? <div id={style.overlay} onClick={handleClick}></div> : ""}
-          {panel ? (
-            <ul
-              id={style.panel}
-              className={panel ? "" : style.closed}
-            >
-              <li className={style.hamLinks}>AskREC</li>
-              <li className={style.hamLinks}>Blog</li>
-              <li className={style.hamLinks}>Event</li>
-              <li className={style.hamLinks}>Team</li>
-              <li className={style.hamLinks}>Login</li>
-            </ul>
-          ) : (
-            ""
-          )}
+          <ul id={style.panel} className={panel ? "" : style.closed}>
+            <li className={style.hamLinks}>AskREC</li>
+            <li className={style.hamLinks}>Blog</li>
+            <li className={style.hamLinks}>Event</li>
+            <li className={style.hamLinks}>Team</li>
+            <li className={style.hamLinks}>Login</li>
+          </ul>
         </div>
       </div>
     </>

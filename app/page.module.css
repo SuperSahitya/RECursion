@@ -26,6 +26,7 @@
 #heading{
   font-size: 4rem;
   padding: 2vw;
+  text-shadow: 5px 5px 10px rgb(126, 126, 126);
 }
 .loading{
   height: 250px;

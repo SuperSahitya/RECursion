@@ -69,6 +69,7 @@
 }
 .links:hover {
   color: rgb(255, 255, 255);
+  text-shadow: 5px 5px 10px rgb(217, 217, 217);
 }
 @media (max-width: 700px) {
   #navLinks {
@@ -99,14 +100,17 @@
     flex-direction: column;
     z-index: 5;
     scale: 1;
+    opacity: 1;
     animation: scaleup 300ms ease-out;
   }
   @keyframes scaleup {
     0% {
       scale: 0;
+      opacity: 0;
     }
     100% {
       scale: 1;
+      opacity: 1;
     }
   }
   #hamburgericon {
@@ -118,10 +122,14 @@
     transition: transform 0.3s ease-out;
   }
   .hamLinks {
-    color: white;
+    color: rgb(209, 209, 209);
     z-index: 10;
     font-size: 2rem;
     list-style: none;
+  }
+  .hamLinks:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px rgb(217, 217, 217);
   }
   #overlay {
     height: 100vh;
@@ -135,5 +143,6 @@
   }
   .closed {
     transform: scale(0);
+    opacity: 0;
   }
 }
