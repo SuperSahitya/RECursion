@@ -9,6 +9,7 @@ import Alumni from "@/Components/Alumni";
 export default function Home() {
   const [data, setData] = useState([]);
   const [alumniData, setAlumniData] = useState([]);
+  const [alumniData2022, setAlumniData2022] = useState([]);
   const [loading, setloading] = useState(true);
   const [alumniLoading, setalumniLoading] = useState(true);
   useEffect(() => {
@@ -21,9 +22,17 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8000/alumni").then(async (res) => {
+    fetch("http://localhost:8000/alumni/2023").then(async (res) => {
       const myData = await res.json();
       setAlumniData(myData);
+      setalumniLoading(false);
+    });
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/alumni/2022").then(async (res) => {
+      const myData = await res.json();
+      setAlumniData2022(myData);
       setalumniLoading(false);
     });
   }, []);
@@ -56,11 +65,30 @@ export default function Home() {
               })
             )}
           </div>
-          {alumniLoading ? "" : <h1 id={style.heading2}>Meet The Alumni</h1>}
+          {loading ? "" : <h1 id={style.heading2}>Meet The Alumni</h1>}
+          {alumniLoading ? "" : <h1 id={style.heading3}>Batch of 2023</h1>}
           <div className={style.members}>
             {alumniLoading
               ? ""
               : alumniData.map((d) => {
+                  return (
+                    <>
+                      <Alumni
+                        memName={d ? d.name : ""}
+                        imageurl={d ? d.image : ""}
+                        department={d ? d.department : ""}
+                        year={d ? d.year : ""}
+                        linkedin={d ? d.linkedin : ""}
+                      ></Alumni>
+                    </>
+                  );
+                })}
+          </div>
+          {alumniLoading ? "" : <h1 id={style.heading3}>Batch of 2022</h1>}
+          <div className={style.members}>
+            {alumniLoading
+              ? ""
+              : alumniData2022.map((d) => {
                   return (
                     <>
                       <Alumni
